@@ -238,14 +238,16 @@
             <li><strong>Universal search framework</strong> over <strong>19+ entities</strong> — one configurable engine instead of N bespoke search endpoints.</li>
             <li><strong>Stampede-safe Caffeine caching</strong> sustaining <strong>~400 concurrent calls</strong> over <strong>300 pooled DB connections</strong>.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework (7 modules) for massively concurrent I/O without thread-pool tuning.</li>
-            <li>Centralised <strong>security, exception, logging &amp; outbound-REST</strong> frameworks every module reuses.</li>
+            <li>A multi-layer <strong>security framework</strong> — Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
+            <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
+            <li>Centralised <strong>exception, logging &amp; outbound-REST</strong> frameworks every module reuses.</li>
           </ul>
         </div>
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
-            <li>Reusable frameworks adopted across the platform — new modules ship in a fraction of the time.</li>
-            <li>Read-heavy workloads served from cache with no write-path contention.</li>
+            <li>Reusable frameworks adopted across the platform — and the access-control system was <strong>reused by another team (SDM)</strong> — so new modules ship in a fraction of the time.</li>
+            <li>Read-heavy workloads served from cache with no write-path contention; <strong>zero unauthorized data access</strong>.</li>
             <li>Earned a <strong>4.2 / "Exceeds Expectations"</strong> appraisal and the Module Lead role.</li>
           </ul>
         </div>
