@@ -188,7 +188,7 @@
     <div class="skill-tier reveal">
       <div class="tier-label"><span class="dot prof"></span>Proficient · used across projects</div>
       <div class="chips">
-        <span>CQRS &amp; Outbox</span><span>Caffeine Caching</span><span>Auth0 / JWT / RBAC</span>
+        <span>CQRS &amp; Outbox</span><span>Caffeine + Redis Caching</span><span>Auth0 / JWT / RBAC</span>
         <span>MapStruct</span><span>HikariCP tuning</span><span>Snowflake</span>
         <span>AWS Secrets Manager</span><span>Flyway</span><span>JUnit / Mockito</span>
         <span>SonarQube</span><span>CI/CD pipelines</span><span>Copilot Agent Mode</span>
@@ -239,7 +239,7 @@
           <ul>
             <li><strong>Read/write datasource routing</strong> — separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
             <li><strong>Universal search framework</strong> over <strong>19+ entities</strong> — one configurable engine instead of N bespoke search endpoints.</li>
-            <li><strong>Stampede-safe Caffeine caching</strong> sustaining <strong>~400 concurrent calls</strong> over <strong>300 pooled DB connections</strong>.</li>
+            <li><strong>Two-tier caching</strong> (Caffeine local + Redis distributed for auto-scaled instances) sustaining <strong>~400 concurrent calls</strong> over <strong>300 pooled DB connections</strong>.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework (7 modules) for massively concurrent I/O without thread-pool tuning.</li>
             <li>A multi-layer <strong>security framework</strong> — Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
