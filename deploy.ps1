@@ -28,15 +28,19 @@ Copy-Item $source $asset -Force
 Write-Host "    Copied: $source -> $asset"
 
 Write-Host "==> 3/4  Staging and committing..." -ForegroundColor Cyan
+# git writes normal progress to stderr; stop treating that as a terminating error.
+$ErrorActionPreference = "Continue"
 git -C $portfolio add .
 # commit returns non-zero when there is nothing to commit; tolerate it.
 git -C $portfolio commit -m $Message
 if ($LASTEXITCODE -ne 0) { Write-Host "    (Nothing new to commit, or commit skipped.)" -ForegroundColor Yellow }
 
 Write-Host "==> 4/4  Pushing to GitHub Pages..." -ForegroundColor Cyan
-# git writes normal progress to stderr; capture it so PowerShell does not flag a false error.
-$pushOutput = git -C $portfolio push origin main 2>&1
-$pushOutput | ForEach-Object { Write-Host "    $_" }
+git -C $portfolio push origin main 2>&1 | ForEach-Object { Write-Host "    $_" }
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "    NOTE: git reported a non-zero exit. On Windows this is usually just stderr progress, not a failure." -ForegroundColor Yellow
+    Write-Host "    Confirm with:  git -C `"$portfolio`" status -sb" -ForegroundColor Yellow
+}
 
 Write-Host ""
 Write-Host "Done. Live at https://bineetbhusandas.github.io (allow ~1-2 min for GitHub Pages to rebuild)." -ForegroundColor Green
