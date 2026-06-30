@@ -174,8 +174,10 @@ strong{color:#fff;font-weight:600}
 .rec-card p{color:var(--muted);font-size:.88rem}
 .testimonial{margin-top:1.8rem;background:linear-gradient(135deg,rgba(56,224,245,.08),rgba(167,139,255,.08));
   border:1px solid var(--line);border-left:3px solid var(--cyan);border-radius:12px;padding:1.6rem 1.8rem}
-.testimonial p{font-size:1.15rem;font-style:italic;color:var(--text)}
+.testimonial p{font-size:1.12rem;font-style:italic;color:var(--text)}
 .testimonial cite{display:block;margin-top:.8rem;color:var(--muted);font-style:normal;font-size:.9rem}
+.testimonial cite strong{color:var(--cyan)}
+.cite-ctx{color:var(--muted2)}
 .placeholder{color:var(--accent3);font-style:italic}
 
 /* TIMELINE */
