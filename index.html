@@ -322,7 +322,7 @@
             <li>Re-engineered sequential carrier polling into a <strong>parallel, multithreaded</strong> pipeline — roughly <strong>10–15× throughput</strong>.</li>
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong> — ~10–15K/day at ~99% reliability.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
-            <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting carriers (<strong>Hapag-Lloyd</strong>) push tracking events <strong>into the platform</strong>; raised test coverage from <strong>~30% to 85%+</strong> via a SonarQube initiative.</li>
+            <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting carriers (<strong>Hapag-Lloyd</strong>) push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>; raised test coverage from <strong>~30% to 85%+</strong> via a SonarQube initiative.</li>
           </ul>
         </div>
         <div class="case-block impact">
