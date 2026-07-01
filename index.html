@@ -72,7 +72,7 @@
     <!-- console card -->
     <aside class="console reveal" aria-hidden="true">
       <div class="console-bar"><span></span><span></span><span></span><em>~/bineet — whoami</em></div>
-      <pre class="console-body"><code><span class="c-key">role</span>      : Senior SWE · Module &amp; Technical Lead
+      <pre class="console-body"><code><span class="c-key">role</span>      : Senior SWE · Module Lead &amp; Lead Developer
 <span class="c-key">domain</span>    : Logistics · Supply-chain visibility
 <span class="c-key">stack</span>     : Java 21 · Spring Boot 3.5 · AWS
 <span class="c-key">patterns</span>  : Event-driven · CQRS · Outbox · SQS&nbsp;FIFO
@@ -189,7 +189,7 @@
       <div class="tier-label"><span class="dot prof"></span>Proficient · used across projects</div>
       <div class="chips">
         <span>CQRS &amp; Outbox</span><span>Caffeine + Redis Caching</span><span>Auth0 / JWT / RBAC</span>
-        <span>MapStruct</span><span>HikariCP tuning</span><span>Snowflake</span>
+        <span>MapStruct</span><span>HikariCP tuning</span><span>Rate-Limit-Aware Concurrency</span>
         <span>AWS Secrets Manager</span><span>Flyway</span><span>JUnit / Mockito</span>
         <span>SonarQube</span><span>CI/CD pipelines</span><span>Copilot Agent Mode</span>
         <span>Claude Code</span>
@@ -261,7 +261,7 @@
     <article class="case reveal">
       <div class="case-head">
         <div>
-          <span class="proj-tag alt">Technical Lead · 2025</span>
+          <span class="proj-tag alt">Lead Developer · 2025</span>
           <h3>Demurrage &amp; Detention (D&amp;D)</h3>
           <p class="case-tag">Greenfield cost-calculation platform · first Global-Accounts go-live</p>
         </div>
@@ -306,7 +306,7 @@
           <p class="case-tag">Ocean container visibility across 50+ carriers</p>
         </div>
         <div class="case-stack">
-          <span>Java · Spring Boot</span><span>AWS Lambda</span><span>Snowflake</span>
+          <span>Java · Spring Boot</span><span>AWS Lambda</span><span>Smart Batch</span>
           <span>Multithreading</span><span>RPA framework</span>
         </div>
       </div>
@@ -320,16 +320,16 @@
           <h6>Approach &amp; key decisions</h6>
           <ul>
             <li>Re-engineered sequential carrier polling into a <strong>parallel, multithreaded</strong> pipeline — roughly <strong>10–15× throughput</strong>.</li>
-            <li>Built an <strong>AWS Lambda eURL service</strong> handling ~10–15K requests/day at ~99% success.</li>
-            <li>Wrote <strong>3 carrier adapters from scratch</strong> and a reusable <strong>RPA framework</strong> covering ~16 carriers (~50–100K records/day).</li>
-            <li>Integrated <strong>Snowflake (PETA)</strong> and a Hapag-Lloyd push API; raised test coverage from <strong>~30% to 85%+</strong>.</li>
+            <li>Built an <strong>AWS Lambda eURL push service</strong> delivering ~10–15K tracking links/day at ~99% reliability.</li>
+            <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
+            <li>Built a secure <strong>Hapag-Lloyd push API</strong>; raised test coverage from <strong>~30% to 85%+</strong> via a SonarQube initiative.</li>
           </ul>
         </div>
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
             <li>Order-of-magnitude faster tracking and far wider carrier coverage.</li>
-            <li>Mentored <strong>10+ interns and ~6 new joiners</strong>; promoted twice on this platform.</li>
+            <li>Mentored <strong>~6 engineers and new joiners</strong>; promoted twice on this platform.</li>
           </ul>
         </div>
       </div>
@@ -387,10 +387,10 @@
         <span class="tl-dot"></span>
         <div class="tl-content">
           <h4>Cozentus Technologies <span class="tl-client">· client: PSA BDP (logistics)</span></h4>
-          <p class="tl-role">Senior Software Engineer · Module &amp; Technical Lead</p>
+          <p class="tl-role">Senior Software Engineer · Module Lead &amp; Lead Developer</p>
           <p class="tl-meta">Jun 2023 – Present · Bhubaneswar</p>
           <ul>
-            <li>Module Lead on ITT/MMT and Technical Lead on D&amp;D — owning architecture, reusable frameworks and a 9-person team.</li>
+            <li>Module Lead on ITT/MMT and Lead Developer on D&amp;D — owning architecture, reusable frameworks and a 9-person team.</li>
             <li>Designed event-driven AWS pipelines processing millions of tracking events and 300K+ shipments per day.</li>
           </ul>
         </div>
@@ -402,7 +402,7 @@
           <p class="tl-role">Software Engineer</p>
           <p class="tl-meta">Jul 2022 – Jun 2023</p>
           <ul>
-            <li>Built carrier adapters, the RPA framework and the parallelised tracking pipeline on Smart Navigator; mentored interns.</li>
+            <li>Built carrier adapters, the RPA framework and the parallelised tracking pipeline on Smart Navigator; mentored ~6 engineers.</li>
           </ul>
         </div>
       </div>

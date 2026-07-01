@@ -77,7 +77,7 @@ download. Put it in:
 - Your **email signature** and cold outreach messages.
 
 **4. It controls the narrative.** Recruiters see your strongest framing first: millions of events/day,
-reusable frameworks, Module/Tech Lead, zero critical defects.
+reusable frameworks, Module Lead / Lead Developer, zero critical defects.
 
 ---
 
