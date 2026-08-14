@@ -103,7 +103,7 @@
         <div class="p-ico">◈</div>
         <h4>Framework-first, not feature-first</h4>
         <p>When the same problem shows up three times, I stop and build the abstraction. Read/write
-          datasource routing, a universal search engine over 19+ entities, stampede-safe caching,
+          datasource routing, a universal search engine over 22+ entities, stampede-safe caching,
           a pluggable scheduler: reusable platforms that let a whole team move faster.</p>
       </article>
       <article class="principle reveal">
@@ -238,9 +238,9 @@
           <h6>Approach &amp; key decisions</h6>
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
-            <li><strong>Universal search framework</strong> over <strong>19+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
+            <li><strong>Universal search framework</strong> over <strong>22+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
             <li><strong>Two-tier caching</strong> (Caffeine local + Redis distributed for auto-scaled instances) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
-            <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework (7 modules) for massively concurrent I/O without thread-pool tuning.</li>
+            <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework running <strong>9 production modules</strong> for massively concurrent I/O without thread-pool tuning.</li>
             <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
             <li>A <strong>trace-ID exception framework</strong> and the <strong>team's API design standards</strong> every module reuses.</li>
@@ -320,7 +320,7 @@
         <div class="case-block approach">
           <h6>Approach &amp; key decisions</h6>
           <ul>
-            <li>Re-engineered sequential carrier polling into a <strong>parallel, multithreaded</strong> pipeline, roughly <strong>10–15× throughput</strong>.</li>
+            <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximising throughput without breaching rate limits: roughly <strong>10–15× throughput</strong>.</li>
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
             <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
