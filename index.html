@@ -153,7 +153,7 @@
           <ul>
             <li>Event-driven architecture, CQRS &amp; outbox at scale</li>
             <li>Concurrency from thread pools to <strong>Java 21 virtual threads</strong></li>
-            <li>Idempotency, FIFO ordering &amp; effectively-once processing</li>
+            <li>Idempotency, FIFO ordering &amp; the Transactional Outbox Pattern</li>
             <li>Performance: two-tier caching, connection-pool tuning &amp; read/write splits</li>
           </ul>
         </div>
@@ -251,7 +251,7 @@
           <ul>
             <li>Reusable frameworks adopted across the platform, and the access-control system was <strong>reused by another team (SDM)</strong>, so new modules ship in a fraction of the time.</li>
             <li>Audited and cleaned <strong>211K+ rows</strong> of legacy master data before go-live, removing <strong>24K+ duplicate/invalid records</strong> (up to <strong>43%</strong> in the largest table) and adding DB constraints to prevent recurrence.</li>
-            <li>Read-heavy workloads served from cache with no write-path contention; <strong>zero unauthorized data access</strong>.</li>
+            <li>Read-heavy workloads served from cache with no write-path contention; <strong>query-level data isolation</strong> scoping every request to the user's authorized companies.</li>
             <li>Recognized for the platform's technical direction with the <strong>Module Lead</strong> role.</li>
           </ul>
         </div>
