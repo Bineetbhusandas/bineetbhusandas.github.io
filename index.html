@@ -154,7 +154,7 @@
             <li>Event-driven architecture, CQRS &amp; outbox at scale</li>
             <li>Concurrency from thread pools to <strong>Java 21 virtual threads</strong></li>
             <li>Idempotency, FIFO ordering &amp; effectively-once processing</li>
-            <li>Performance: ~400 concurrent calls over 300 pooled DB connections</li>
+            <li>Performance: two-tier caching, connection-pool tuning &amp; read/write splits</li>
           </ul>
         </div>
         <div class="ai-col">
@@ -239,7 +239,7 @@
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
             <li><strong>Universal search framework</strong> over <strong>19+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
-            <li><strong>Two-tier caching</strong> (Caffeine local + Redis distributed for auto-scaled instances) sustaining <strong>~400 concurrent calls</strong> over <strong>300 pooled DB connections</strong>.</li>
+            <li><strong>Two-tier caching</strong> (Caffeine local + Redis distributed for auto-scaled instances) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework (7 modules) for massively concurrent I/O without thread-pool tuning.</li>
             <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
@@ -323,7 +323,7 @@
             <li>Re-engineered sequential carrier polling into a <strong>parallel, multithreaded</strong> pipeline, roughly <strong>10–15× throughput</strong>.</li>
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
-            <li>Designed, developed, and maintained <strong>50+ production-grade REST API endpoints</strong> across the platform, with Swagger/OpenAPI documentation and close Angular-frontend collaboration for seamless integration.</li>
+            <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
             <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting <strong>major global carriers</strong> push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>; raised test coverage from <strong>~30% to 85%+</strong> via a SonarQube initiative.</li>
           </ul>
         </div>
