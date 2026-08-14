@@ -320,7 +320,7 @@
         <div class="case-block approach">
           <h6>Approach &amp; key decisions</h6>
           <ul>
-            <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximising throughput without breaching rate limits: roughly <strong>10–15× throughput</strong>.</li>
+            <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximizing throughput without breaching rate limits: roughly <strong>10–15× throughput</strong>.</li>
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
             <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
