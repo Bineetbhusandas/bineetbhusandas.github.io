@@ -321,17 +321,18 @@
           <h6>Approach &amp; key decisions</h6>
           <ul>
             <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximizing throughput without breaching rate limits: roughly <strong>10–15× throughput</strong>.</li>
-            <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability.</li>
+            <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability, replacing a manual daily Excel-and-email handoff and cutting data latency from once-daily to <strong>under 15 minutes</strong>.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
             <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
-            <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting <strong>major global carriers</strong> push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>; raised test coverage from <strong>~30% to 85%+</strong> via a SonarQube initiative.</li>
+            <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting <strong>major global carriers</strong> push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>.</li>
           </ul>
         </div>
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
             <li>Order-of-magnitude faster tracking and far wider carrier coverage.</li>
-            <li>Mentored <strong>~6 engineers and new joiners</strong>; promoted twice on this platform.</li>
+            <li>Owned <strong>end-to-end release management</strong> for a year: release packages, database migrations, client approvals, deployments and rollback, with <strong>zero release-related production issues</strong>.</li>
+            <li>Mentored <strong>~6 engineers and new joiners</strong>, enabling delivery of <strong>~11 additional carrier adapters</strong>; promoted twice on this platform.</li>
           </ul>
         </div>
       </div>
@@ -404,7 +405,7 @@
           <p class="tl-role">Software Engineer</p>
           <p class="tl-meta">Jul 2022 – Jun 2023</p>
           <ul>
-            <li>Built carrier adapters, the RPA framework and the parallelised tracking pipeline on Smart Navigator; mentored ~6 engineers.</li>
+            <li>Built carrier adapters, the RPA framework and the parallelised tracking pipeline on Smart Navigator; mentored ~6 engineers, enabling delivery of ~11 additional carrier adapters.</li>
           </ul>
         </div>
       </div>
