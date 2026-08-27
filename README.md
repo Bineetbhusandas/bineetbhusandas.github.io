@@ -86,7 +86,7 @@ reusable frameworks, Module Lead / Lead Developer, zero critical defects.
 1. **Add the link to your resume header** and regenerate the PDFs (one line: `Portfolio: bineetbhusandas.github.io`).
 2. **Put it in your LinkedIn** "Featured" section + the Website/Contact field. Pin it.
 3. **Cold-DM recruiters** with it:
-   > *"Hi [Name], I'm a Java backend engineer (4.5+ yrs, Spring Boot + AWS + microservices). Quick snapshot of my work: bineetbhusandas.github.io. Open to Senior SE roles — would love to connect."*
+   > *"Hi [Name], I'm a Java backend engineer (nearly 5 yrs, Spring Boot + AWS + microservices). Quick snapshot of my work: bineetbhusandas.github.io. Open to Senior SE roles — would love to connect."*
 4. **Comment/post on LinkedIn** with a link back to a project — drives profile + portfolio visits.
 5. **Use it in applications** wherever there's a "Portfolio/Website" field — many ATS forms have one.
 6. **Keep it current** — update the projects as you ship new things; recency signals an active engineer.
