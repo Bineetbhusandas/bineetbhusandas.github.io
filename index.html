@@ -154,7 +154,7 @@
             <li>Event-driven architecture, CQRS &amp; outbox at scale</li>
             <li>Concurrency from thread pools to <strong>Java 21 virtual threads</strong></li>
             <li>Idempotency, FIFO ordering &amp; the Transactional Outbox Pattern</li>
-            <li>Performance: two-tier caching, connection-pool tuning &amp; read/write splits</li>
+            <li>Performance: pluggable caching, connection-pool tuning &amp; read/write splits</li>
           </ul>
         </div>
         <div class="ai-col">
@@ -188,7 +188,7 @@
     <div class="skill-tier reveal">
       <div class="tier-label"><span class="dot prof"></span>Proficient · used across projects</div>
       <div class="chips">
-        <span>CQRS &amp; Outbox</span><span>Caffeine + Redis Caching</span><span>Auth0 / JWT / RBAC</span>
+        <span>CQRS &amp; Outbox</span><span>Caffeine / Redis Cache Providers</span><span>Auth0 / JWT / RBAC</span>
         <span>MapStruct</span><span>HikariCP tuning</span><span>Rate-Limit-Aware Concurrency</span>
         <span>AWS Secrets Manager</span><span>Flyway</span><span>JUnit / Mockito</span>
         <span>SonarQube</span><span>CI/CD pipelines</span><span>GitHub Copilot</span>
@@ -239,7 +239,7 @@
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
             <li><strong>Universal search framework</strong> over <strong>22+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
-            <li><strong>Two-tier caching</strong> (Caffeine local + Redis distributed for auto-scaled instances) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
+            <li><strong>Pluggable cache framework</strong> (Caffeine and Redis providers, switched by config) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework running <strong>9 production modules</strong> for massively concurrent I/O without thread-pool tuning.</li>
             <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
