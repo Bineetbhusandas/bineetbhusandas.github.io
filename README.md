@@ -6,7 +6,7 @@ A fast, modern, recruiter-optimized single-page portfolio (pure HTML/CSS/JS — 
 - `index.html` — the page (content + SEO meta tags)
 - `style.css` — styling (dark, professional, responsive)
 - `script.js` — small interactions (mobile menu, scroll animations)
-- `assets/Bineetbhusan_Das_Resume.pdf` — the downloadable resume (auto-copied from the Product resume)
+- `assets/Bineetbhusan_Das_Resume.pdf` — the downloadable resume (company-neutral; generated from the navy-calibri template in the private ai-job-search repo)
 
 ---
 

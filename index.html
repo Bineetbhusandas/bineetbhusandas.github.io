@@ -51,7 +51,7 @@
         <span class="grad">reusable frameworks</span> that logistics platforms run on.
       </p>
       <p class="sub reveal">
-        Nearly 5 years engineering high-throughput backend systems on AWS: pipelines that move
+        4.8 years engineering high-throughput backend systems on AWS: pipelines that move
         <strong>millions of container-tracking events a day</strong> with idempotency, reliable
         event publication, and zero critical defects. My specialty is the layer under the features:
         the frameworks the rest of the team builds on.
@@ -86,7 +86,7 @@
   <!-- ============ IMPACT BAND ============ -->
   <section class="impact" id="impact">
     <div class="impact-grid">
-      <div class="metric reveal"><span class="num" data-count="8" data-suffix="M+">0</span><span class="lbl">Tracking events / day</span></div>
+      <div class="metric reveal"><span class="num" data-count="10" data-suffix="K+">0</span><span class="lbl">Companies under access control</span></div>
       <div class="metric reveal"><span class="num" data-count="300" data-suffix="K+">0</span><span class="lbl">Shipments / day</span></div>
       <div class="metric reveal"><span class="num" data-count="50" data-suffix="+">0</span><span class="lbl">Carrier integrations</span></div>
       <div class="metric reveal"><span class="num" data-count="0" data-suffix="">0</span><span class="lbl">Critical defects shipped</span></div>
@@ -110,7 +110,7 @@
         <div class="p-ico">🛡</div>
         <h4>Prevention beats firefighting</h4>
         <p>Idempotent consumers, the outbox pattern, FIFO ordering, and 85%+ test coverage exist so
-          incidents never happen. Multiple greenfield go-lives shipped with <strong>zero critical
+          incidents never happen. The D&amp;D greenfield go-live shipped with <strong>zero critical
           defects</strong>, by design, not luck.</p>
       </article>
       <article class="principle reveal">
@@ -123,7 +123,7 @@
       <article class="principle reveal">
         <div class="p-ico">◎</div>
         <h4>Ownership end-to-end</h4>
-        <p>From a one-line client ask to production rollout and on-call: design, build, lead a
+        <p>From a one-line client ask to production rollout and support: design, build, lead a
           9-person team, and stand behind it. Four promotions, the most recent in June 2026, came from
           owning outcomes, not tasks.</p>
       </article>
@@ -179,8 +179,8 @@
       <div class="chips">
         <span>Java 8–21</span><span>Spring Boot 3.5</span><span>Spring (Data/Security/Web)</span>
         <span>REST APIs</span><span>Event-Driven Architecture</span><span>AWS SQS (FIFO)</span>
-        <span>AWS Lambda</span><span>AWS SNS / S3</span><span>Microservices</span>
-        <span>MySQL / SQL Server</span><span>JPA / Hibernate</span><span>Multithreading</span>
+        <span>AWS Lambda</span><span>API Gateway</span><span>AWS SNS / S3</span><span>Microservices</span>
+        <span>MySQL (Amazon RDS) / SQL Server</span><span>JPA / Hibernate</span><span>Multithreading</span>
         <span>Virtual Threads</span><span>Maven</span><span>Git</span>
       </div>
     </div>
@@ -188,26 +188,26 @@
     <div class="skill-tier reveal">
       <div class="tier-label"><span class="dot prof"></span>Proficient · used across projects</div>
       <div class="chips">
-        <span>CQRS &amp; Outbox</span><span>Caffeine / Redis Cache Providers</span><span>Auth0 / JWT / RBAC</span>
+        <span>CQRS &amp; Outbox</span><span>Redis (ElastiCache) / Caffeine</span><span>Auth0 / JWT / RBAC</span>
         <span>MapStruct</span><span>HikariCP tuning</span><span>Rate-Limit-Aware Concurrency</span>
         <span>AWS Secrets Manager</span><span>Flyway</span><span>JUnit / Mockito</span>
-        <span>SonarQube</span><span>CI/CD pipelines</span><span>GitHub Copilot</span>
+        <span>SonarQube</span><span>AWS ECS / CodePipeline</span><span>Amazon Cognito</span><span>CloudWatch</span><span>GitHub Copilot</span>
         <span>Claude Code</span>
       </div>
     </div>
 
     <div class="skill-tier reveal">
-      <div class="tier-label"><span class="dot fam"></span>Working knowledge</div>
+      <div class="tier-label"><span class="dot fam"></span>Also in my toolkit</div>
       <div class="chips">
-        <span>Testcontainers</span><span>Docker</span><span>System Design</span>
-        <span>Angular (integration)</span><span>Linux</span><span>Agile / Scrum</span>
+        <span>Apache Kafka</span><span>Docker</span><span>Kubernetes</span><span>System Design (HLD/LLD)</span>
+        <span>Angular / TypeScript</span><span>Linux</span><span>Agile / Scrum</span>
       </div>
     </div>
 
     <div class="going-deeper reveal">
       <strong>Going deeper on right now →</strong>
-      Structured concurrency &amp; scoped values (Java 21+), production-grade observability,
-      and AI-augmented development workflows.
+      Apache Kafka and Kubernetes in depth, structured concurrency &amp; scoped values (Java 21+),
+      system design, and AI-augmented development workflows.
     </div>
   </section>
 
@@ -219,13 +219,13 @@
     <article class="case reveal">
       <div class="case-head">
         <div>
-          <span class="proj-tag">Module Lead · 2025–present</span>
+          <span class="proj-tag">Module Lead · Jul 2025–present</span>
           <h3>ITT / MMT · Integrated Track &amp; Trace</h3>
           <p class="case-tag">Next-gen multi-modal (ocean · air · rail · road) visibility platform</p>
         </div>
         <div class="case-stack">
           <span>Java 21 · Virtual Threads</span><span>Spring Boot 3.5</span><span>AWS Lambda · SQS FIFO</span>
-          <span>CQRS</span><span>Caffeine</span><span>Auth0 · RBAC</span>
+          <span>CQRS</span><span>Caffeine · Redis</span><span>Auth0 · RBAC</span>
         </div>
       </div>
       <div class="case-body">
@@ -239,7 +239,7 @@
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
             <li><strong>Universal search framework</strong> over <strong>22+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
-            <li><strong>Pluggable cache framework</strong> (Caffeine and Redis providers, switched by config) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
+            <li><strong>Pluggable cache framework</strong> (Caffeine locally, Redis on Amazon ElastiCache for distributed caching) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework running <strong>9 production modules</strong> for massively concurrent I/O without thread-pool tuning.</li>
             <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
@@ -249,7 +249,7 @@
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
-            <li>Reusable frameworks adopted across the platform, and the access-control system was <strong>reused by another team (SDM)</strong>, so new modules ship in a fraction of the time.</li>
+            <li>Reusable frameworks adopted across the platform, and the access-control system was <strong>reused by another team</strong>, so new modules ship in a fraction of the time.</li>
             <li>Audited and cleaned <strong>211K+ rows</strong> of legacy master data before go-live, removing <strong>24K+ duplicate/invalid records</strong> (up to <strong>43%</strong> in the largest table) and adding DB constraints to prevent recurrence.</li>
             <li>Read-heavy workloads served from cache with no write-path contention; <strong>query-level data isolation</strong> scoping every request to the user's authorized companies.</li>
             <li>Recognized for the platform's technical direction with the <strong>Module Lead</strong> role.</li>
@@ -262,9 +262,9 @@
     <article class="case reveal">
       <div class="case-head">
         <div>
-          <span class="proj-tag alt">Lead Developer · 2025</span>
+          <span class="proj-tag alt">Lead Developer · Dec 2024–Jun 2025</span>
           <h3>Demurrage &amp; Detention (D&amp;D)</h3>
-          <p class="case-tag">Greenfield cost-calculation platform · first Global-Accounts go-live</p>
+          <p class="case-tag">Greenfield cost-calculation platform · zero-critical-defect go-live</p>
         </div>
         <div class="case-stack">
           <span>Java · Spring Boot</span><span>AWS SQS</span><span>Auth0 · RBAC</span>
@@ -276,7 +276,7 @@
           <h6>Problem</h6>
           <p>Build a brand-new demurrage &amp; detention cost engine from zero in <strong>4 months</strong>,
             accurate against <strong>~100K contracts</strong> and a firehose of
-            <strong>300K+ shipments/day</strong>, and land the company's first Global-Accounts customer.</p>
+            <strong>300K+ shipments/day</strong>.</p>
         </div>
         <div class="case-block approach">
           <h6>Approach &amp; key decisions</h6>
@@ -290,7 +290,7 @@
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
-            <li>Shipped on time with <strong>zero critical defects</strong>, the company's first Global-Accounts go-live.</li>
+            <li>Shipped on time with <strong>zero critical defects</strong>, the platform's first production go-live.</li>
             <li>Direct written appreciation from the client.</li>
             <li>High Achiever bonus for the cycle.</li>
           </ul>
@@ -302,7 +302,7 @@
     <article class="case reveal">
       <div class="case-head">
         <div>
-          <span class="proj-tag">Backend Engineer → SSE · 2022–2024</span>
+          <span class="proj-tag">Intern → Senior Software Engineer · 2022–2024</span>
           <h3>Smart Navigator · carrier integration backbone</h3>
           <p class="case-tag">Ocean container visibility across 50+ carriers</p>
         </div>
@@ -320,9 +320,9 @@
         <div class="case-block approach">
           <h6>Approach &amp; key decisions</h6>
           <ul>
-            <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximizing throughput without breaching rate limits: roughly <strong>10–15× throughput</strong>.</li>
+            <li>Benchmarked each carrier's API throughput, then re-engineered sequential polling into per-carrier <strong>Smart Batches</strong> with async Lambda fan-out and per-carrier thread/batch tuning, maximizing throughput without breaching rate limits: an <strong>estimated 10–15x throughput gain</strong>.</li>
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability, replacing a manual daily Excel-and-email handoff and cutting data latency from once-daily to <strong>under 15 minutes</strong>.</li>
-            <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus a reusable <strong>RPA framework</strong> covering ~16 no-API carriers (~50–100K records/day).</li>
+            <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus the <strong>Java/Lambda integration service</strong> and mapper framework behind RPA-based tracking for ~16 no-API carriers (~50–100K records/day).</li>
             <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
             <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting <strong>major global carriers</strong> push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>.</li>
           </ul>
@@ -330,7 +330,7 @@
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
-            <li>Order-of-magnitude faster tracking and far wider carrier coverage.</li>
+            <li>Much faster tracking cycles and wider carrier coverage.</li>
             <li>Owned <strong>end-to-end release management</strong> for a year: release packages, database migrations, client approvals, deployments and rollback, with <strong>zero release-related production issues</strong>.</li>
             <li>Mentored <strong>~6 engineers and new joiners</strong>, enabling delivery of <strong>~11 additional carrier adapters</strong>; promoted twice on this platform.</li>
           </ul>
@@ -344,7 +344,7 @@
     <h2 class="section-title reveal"><span>05</span> Recognition</h2>
     <div class="rec-grid">
       <div class="rec-card reveal">
-        <div class="rec-badge">3×</div>
+        <div class="rec-badge">3x</div>
         <h4>High Achiever Award</h4>
         <p>Recognised three cycles running for consistently exceeding expectations and delivering high-stakes go-lives.</p>
       </div>
@@ -354,14 +354,14 @@
         <p>Awarded by leadership for <em>"delivering at a much higher level than the designation"</em>, operating above role on Smart Navigator.</p>
       </div>
       <div class="rec-card reveal">
-        <div class="rec-badge">★</div>
-        <h4>On-Spot Award · 2026</h4>
-        <p>Spot recognition for ownership and impact on a critical delivery.</p>
+        <div class="rec-badge">2x</div>
+        <h4>On-Spot Award, twice in 2026</h4>
+        <p>Jan–Mar and Jul–Sep 2026, for agility, ownership and value-driven actions that create an immediate impact.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-badge">↑4</div>
         <h4>Four promotions, latest June 2026</h4>
-        <p>Intern → Software Engineer → Senior Software Engineer, growing from Backend Engineer to Lead Developer to Module Lead across three platforms.</p>
+        <p>Intern → Software Engineer → Senior Software Engineer, then Lead Developer and Module Lead across three platforms.</p>
       </div>
     </div>
 
