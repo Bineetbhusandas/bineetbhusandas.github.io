@@ -51,7 +51,7 @@
         <span class="grad">reusable frameworks</span> that logistics platforms run on.
       </p>
       <p class="sub reveal">
-        4.8 years engineering high-throughput backend systems on AWS: pipelines that move
+        4.8+ years engineering high-throughput backend systems on AWS: pipelines that move
         <strong>millions of container-tracking events a day</strong> with idempotency, reliable
         event publication, and zero critical defects. My specialty is the layer under the features:
         the frameworks the rest of the team builds on.
@@ -64,7 +64,6 @@
 
       <div class="hero-links reveal">
         <a href="https://www.linkedin.com/in/bineetbhusandas" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/Bineetbhusandas" target="_blank" rel="noopener">GitHub</a>
         <a href="mailto:bineetbhusandas@gmail.com">Email</a>
       </div>
     </div>
@@ -109,7 +108,7 @@
       <article class="principle reveal">
         <div class="p-ico">🛡</div>
         <h4>Prevention beats firefighting</h4>
-        <p>Idempotent consumers, the outbox pattern, FIFO ordering, and 85%+ test coverage exist so
+        <p>Idempotent consumers, the Transactional Outbox Pattern, FIFO ordering, and 85%+ test coverage exist so
           incidents never happen. The D&amp;D greenfield go-live shipped with <strong>zero critical
           defects</strong>, by design, not luck.</p>
       </article>
@@ -124,7 +123,7 @@
         <div class="p-ico">◎</div>
         <h4>Ownership end-to-end</h4>
         <p>From a one-line client ask to production rollout and support: design, build, lead a
-          9-person team, and stand behind it. Four promotions, the most recent in June 2026, came from
+          9-person team, and stand behind it. Four promotions in under five years came from
           owning outcomes, not tasks.</p>
       </article>
     </div>
@@ -151,7 +150,7 @@
         <div class="ai-col">
           <h5>The depth (earned the hard way)</h5>
           <ul>
-            <li>Event-driven architecture, CQRS &amp; outbox at scale</li>
+            <li>Event-driven architecture and CQRS-style read models at scale</li>
             <li>Concurrency from thread pools to <strong>Java 21 virtual threads</strong></li>
             <li>Idempotency, FIFO ordering &amp; the Transactional Outbox Pattern</li>
             <li>Performance: pluggable caching, connection-pool tuning &amp; read/write splits</li>
@@ -191,16 +190,16 @@
         <span>CQRS &amp; Outbox</span><span>Redis (ElastiCache) / Caffeine</span><span>Auth0 / JWT / RBAC</span>
         <span>MapStruct</span><span>HikariCP tuning</span><span>Rate-Limit-Aware Concurrency</span>
         <span>AWS Secrets Manager</span><span>Flyway</span><span>JUnit / Mockito</span>
-        <span>SonarQube</span><span>AWS ECS / CodePipeline</span><span>Amazon Cognito</span><span>CloudWatch</span><span>GitHub Copilot</span>
-        <span>Claude Code</span>
+        <span>SonarQube</span><span>AWS ECS</span><span>Amazon Cognito</span><span>CloudWatch Logs</span><span>GitHub Copilot</span>
+        <span>Claude Code</span><span>Rate Limiting</span><span>System Design (HLD/LLD)</span><span>Angular / TypeScript</span>
+        <span>Linux</span><span>Agile / Scrum</span>
       </div>
     </div>
 
     <div class="skill-tier reveal">
-      <div class="tier-label"><span class="dot fam"></span>Also in my toolkit</div>
+      <div class="tier-label"><span class="dot fam"></span>Working knowledge</div>
       <div class="chips">
-        <span>Apache Kafka</span><span>Docker</span><span>Kubernetes</span><span>System Design (HLD/LLD)</span>
-        <span>Angular / TypeScript</span><span>Linux</span><span>Agile / Scrum</span>
+        <span>Apache Kafka</span><span>Kubernetes</span><span>Docker</span>
       </div>
     </div>
 
@@ -239,9 +238,11 @@
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
             <li><strong>Universal search framework</strong> over <strong>22+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
-            <li><strong>Pluggable cache framework</strong> (Caffeine locally, Redis on Amazon ElastiCache for distributed caching) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
+            <li>Designed and built <strong>loop-safe two-way shipment sync</strong> between partner systems, using config-driven routing on SNS FIFO that never sends a change back to its sender, plus an SQS FIFO and SnapStart Lambda bridge for a partner with only an HTTP API.</li>
+            <li>Ended <strong>database lock contention</strong> between parallel Lambdas by queueing summary-table refreshes for a single scheduler instead of rebuilding them inline (a CQRS-style read model).</li>
+            <li><strong>Pluggable cache framework</strong> (Caffeine for the single-instance scheduler, Redis on Amazon ElastiCache for services running on multiple instances) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
             <li><strong>Java 21 virtual threads</strong> in a pluggable scheduler framework running <strong>9 production modules</strong> for massively concurrent I/O without thread-pool tuning.</li>
-            <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures.</li>
+            <li>A multi-layer <strong>security framework</strong>: Auth0 JWT + pluggable external auth, a <strong>3-level RBAC</strong> model (Category → Feature → Privilege) and query-level company data isolation, replacing legacy stored procedures, with separate filter chains for public, external API-key and internal JWT traffic and cache-backed rate limiting.</li>
             <li>A scalable <strong>User–Company access-control system</strong> (PSA &amp; non-PSA hierarchies, bulk-assignment engine, lazy loading) handling <strong>10K+ companies</strong> without degradation.</li>
             <li>A <strong>trace-ID exception framework</strong> and the <strong>team's API design standards</strong> every module reuses.</li>
           </ul>
@@ -249,8 +250,8 @@
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
-            <li>Reusable frameworks adopted across the platform, and the access-control system was <strong>reused by another team</strong>, so new modules ship in a fraction of the time.</li>
-            <li>Audited and cleaned <strong>211K+ rows</strong> of legacy master data before go-live, removing <strong>24K+ duplicate/invalid records</strong> (up to <strong>43%</strong> in the largest table) and adding DB constraints to prevent recurrence.</li>
+            <li>Reusable frameworks used across the platform, with per-feature search work cut from hours to minutes; the access-control system was <strong>reused by another team</strong>.</li>
+            <li>Audited and cleaned <strong>211K+ rows</strong> of legacy master data before go-live, removing <strong>24K+ duplicate/invalid records</strong> (up to <strong>43%</strong> in one table) and adding DB constraints to prevent recurrence.</li>
             <li>Read-heavy workloads served from cache with no write-path contention; <strong>query-level data isolation</strong> scoping every request to the user's authorized companies.</li>
             <li>Recognized for the platform's technical direction with the <strong>Module Lead</strong> role.</li>
           </ul>
@@ -274,7 +275,7 @@
       <div class="case-body">
         <div class="case-block problem">
           <h6>Problem</h6>
-          <p>Build a brand-new demurrage &amp; detention cost engine from zero in <strong>4 months</strong>,
+          <p>Build a brand-new demurrage &amp; detention cost engine from zero in <strong>~4 months</strong>,
             accurate against <strong>~100K contracts</strong> and a firehose of
             <strong>300K+ shipments/day</strong>.</p>
         </div>
@@ -283,8 +284,8 @@
           <ul>
             <li>Led a <strong>9-person team</strong> (2 FE · 4 BE · 1 BA · 2 QC) across architecture, design and delivery.</li>
             <li>Designed the <strong>cost calculator</strong> and <strong>contract-matching</strong> engine, the platform's commercial core.</li>
-            <li><strong>SQS-based event pipelines</strong> with idempotent consumers to absorb 300K+ daily shipments without duplication or loss.</li>
-            <li>Auth0-backed <strong>RBAC with data isolation</strong>, plus a shared common framework, CSV exports and alerting.</li>
+            <li><strong>SQS-based event pipelines</strong> with idempotent consumers for 300K+ shipments a day.</li>
+            <li>Auth0-backed <strong>RBAC with data isolation</strong>, a shared common framework, and customer threshold alerts (an HTML email with a CSV of affected containers) delivered by the team under my lead.</li>
           </ul>
         </div>
         <div class="case-block impact">
@@ -308,7 +309,7 @@
         </div>
         <div class="case-stack">
           <span>Java · Spring Boot</span><span>AWS Lambda</span><span>REST APIs</span>
-          <span>Multithreading</span><span>RPA framework</span>
+          <span>Multithreading</span><span>RPA integration</span>
         </div>
       </div>
       <div class="case-body">
@@ -324,14 +325,14 @@
             <li><strong>Outbound:</strong> built an <strong>AWS Lambda</strong> that pushes passwordless tracking links (eURLs) <strong>out to a customer system</strong>, ~10–15K/day at ~99% reliability, replacing a manual daily Excel-and-email handoff and cutting data latency from once-daily to <strong>under 15 minutes</strong>.</li>
             <li>Wrote <strong>3 carrier adapters from scratch</strong>, enhanced the reusable adapter framework, and normalized carrier responses into a <strong>common event model</strong>; plus the <strong>Java/Lambda integration service</strong> and mapper framework behind RPA-based tracking for ~16 no-API carriers (~50–100K records/day).</li>
             <li>Owned <strong>50+ production REST endpoints</strong> across the platform, standardizing request/response contracts and Swagger/OpenAPI documentation that the Angular team integrated against directly.</li>
-            <li><strong>Inbound:</strong> built a secure <strong>callback API</strong> letting <strong>major global carriers</strong> push tracking events <strong>into the platform</strong>, tuned for <strong>~200 concurrent requests</strong>.</li>
+            <li><strong>Inbound:</strong> built a secure <strong>push API</strong> letting <strong>a major global ocean carrier</strong> send tracking events <strong>into the platform</strong>, with client-credential and scope-based authorization and a full audit trail, tuned for <strong>~200 concurrent requests</strong>.</li>
           </ul>
         </div>
         <div class="case-block impact">
           <h6>Impact</h6>
           <ul>
             <li>Much faster tracking cycles and wider carrier coverage.</li>
-            <li>Owned <strong>end-to-end release management</strong> for a year: release packages, database migrations, client approvals, deployments and rollback, with <strong>zero release-related production issues</strong>.</li>
+            <li>Owned <strong>release management for ~26 biweekly releases</strong> (packaging, database migrations, client approvals, CodePipeline deployments and rollback) with <strong>zero release-related production issues</strong>.</li>
             <li>Mentored <strong>~6 engineers and new joiners</strong>, enabling delivery of <strong>~11 additional carrier adapters</strong>; promoted twice on this platform.</li>
           </ul>
         </div>
@@ -346,12 +347,7 @@
       <div class="rec-card reveal">
         <div class="rec-badge">3x</div>
         <h4>High Achiever Award</h4>
-        <p>Recognised three cycles running for consistently exceeding expectations and delivering high-stakes go-lives.</p>
-      </div>
-      <div class="rec-card reveal">
-        <div class="rec-badge">CEO</div>
-        <h4>Discretionary Bonus</h4>
-        <p>Awarded by leadership for <em>"delivering at a much higher level than the designation"</em>, operating above role on Smart Navigator.</p>
+        <p>Three appraisal cycles running (FY 2023-24 to 2025-26). The first was a CEO-signed award for <em>"delivering at a much higher level than the designation"</em> on Smart Navigator.</p>
       </div>
       <div class="rec-card reveal">
         <div class="rec-badge">2x</div>
@@ -360,7 +356,7 @@
       </div>
       <div class="rec-card reveal">
         <div class="rec-badge">↑4</div>
-        <h4>Four promotions, latest June 2026</h4>
+        <h4>Four promotions in under five years</h4>
         <p>Intern → Software Engineer → Senior Software Engineer, then Lead Developer and Module Lead across three platforms.</p>
       </div>
     </div>
@@ -394,7 +390,7 @@
           <p class="tl-meta">Jun 2023 – Present · Bhubaneswar</p>
           <ul>
             <li>Module Lead on ITT/MMT and Lead Developer on D&amp;D, owning architecture, reusable frameworks and a 9-person team.</li>
-            <li>Designed event-driven AWS pipelines processing millions of tracking events and 300K+ shipments per day.</li>
+            <li>Designed event-driven AWS pipelines processing millions of tracking events and 300K+ shipments per day, including loop-safe two-way sync between partner systems.</li>
           </ul>
         </div>
       </div>
@@ -405,7 +401,7 @@
           <p class="tl-role">Software Engineer</p>
           <p class="tl-meta">Jul 2022 – Jun 2023</p>
           <ul>
-            <li>Built carrier adapters, the RPA framework and the parallelised tracking pipeline on Smart Navigator; mentored ~6 engineers, enabling delivery of ~11 additional carrier adapters.</li>
+            <li>Built the Java/Lambda service behind RPA-based tracking for ~16 carriers with no API, and mentored ~6 engineers, enabling delivery of ~11 additional carrier adapters.</li>
           </ul>
         </div>
       </div>
@@ -452,8 +448,6 @@
       </div>
       <div class="contact-meta">
         <a href="https://www.linkedin.com/in/bineetbhusandas" target="_blank" rel="noopener">LinkedIn</a>
-        <span>·</span>
-        <a href="https://github.com/Bineetbhusandas" target="_blank" rel="noopener">GitHub</a>
         <span>·</span>
         <a href="tel:+917540844677">+91 75408 44677</a>
         <span>·</span>
