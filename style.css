@@ -174,7 +174,7 @@ strong{color:#fff;font-weight:600}
 .case-block.impact li::before{content:"✓";position:absolute;left:0;color:var(--accent2)}
 
 /* RECOGNITION */
-.rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem}
+.rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem}
 .rec-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
   padding:1.5rem;transition:.25s;text-align:center}
 .rec-card:hover{transform:translateY(-4px);border-color:var(--accent2)}
