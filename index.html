@@ -102,7 +102,7 @@
         <div class="p-ico">◈</div>
         <h4>Framework-first, not feature-first</h4>
         <p>When the same problem shows up three times, I stop and build the abstraction. Read/write
-          datasource routing, a universal search engine over 19 entities, stampede-safe caching,
+          datasource routing, a universal search engine over 22+ entities, stampede-safe caching,
           a pluggable scheduler: reusable platforms that let a whole team move faster.</p>
       </article>
       <article class="principle reveal">
@@ -237,7 +237,7 @@
           <h6>Approach &amp; key decisions</h6>
           <ul>
             <li><strong>Read/write datasource routing</strong>: separated query load from ingestion so heavy reads never block writes (a CQRS-style split).</li>
-            <li><strong>Universal search framework</strong> over <strong>19 entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
+            <li><strong>Universal search framework</strong> over <strong>22+ entities</strong>: one configurable engine instead of N bespoke search endpoints.</li>
             <li>Designed and built <strong>loop-safe two-way shipment sync</strong> between partner systems, using config-driven routing on SNS FIFO that never sends a change back to its sender, plus an SQS FIFO and SnapStart Lambda bridge for a partner with only an HTTP API.</li>
             <li>Ended <strong>database lock contention</strong> between parallel Lambdas by queueing summary-table refreshes for a single scheduler instead of rebuilding them inline (a CQRS-style read model).</li>
             <li><strong>Pluggable cache framework</strong> (Caffeine for the single-instance scheduler, Redis on Amazon ElastiCache for services running on multiple instances) with stampede-safe per-key locking and background refresh, cutting repeat database hits on the hottest read paths.</li>
